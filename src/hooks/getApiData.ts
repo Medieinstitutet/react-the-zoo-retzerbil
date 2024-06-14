@@ -1,8 +1,9 @@
 import axios from "axios";
+import { IAnimalResponse } from "../models/IAnimalResponse";
 
 export const getApiData = (url:string) =>{
-    const get = async <T>() =>{
-        const response = await axios.get<T>(url);
+    const get = async () =>{
+        const response = await axios.get<IAnimalResponse>(url);
         return response.data
     }
     return {get}
