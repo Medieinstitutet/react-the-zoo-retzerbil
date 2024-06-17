@@ -1,10 +1,12 @@
 import axios from "axios";
-import { IAnimalResponse } from "../models/IAnimalResponse";
+import { IAnimal } from "../models/IAnimal";
+
 
 export const getApiData = (url:string) =>{
     const get = async () =>{
-        const response = await axios.get<IAnimalResponse>(url);
-        return response.data.AnimalList
+        const response = await axios.get<IAnimal[]>(url);
+        return response.data
+
     }
     return {get}
 }

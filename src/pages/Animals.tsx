@@ -15,12 +15,14 @@ export const Animals = () =>{
         fetchAnimals();
     },[])
 
+   
+
 console.log(animals);
     return <>
 
     <h1>Weee I love animals :3</h1>
     <ul>
-        {animals.length > 0 &&
+    {animals.length > 0 &&
         <li>{animals[0].name}</li>}
     </ul>
     </>
