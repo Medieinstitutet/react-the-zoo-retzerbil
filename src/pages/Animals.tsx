@@ -4,29 +4,29 @@ import { IAnimal } from "../models/IAnimal";
 import { Animal } from "../components/Animal";
 import "../AnimalListStyling.scss"
 
-export const Animals = () =>{
+export const Animals = () => {
     const { get } = getApiData("https://animals.azurewebsites.net/api/animals")
     const [animals, setAnimals] = useState<IAnimal[]>([]);
-    
 
-    useEffect(()=>{
-        const fetchAnimals = async () =>{
+
+    useEffect(() => {
+        const fetchAnimals = async () => {
             const result = await get();
             setAnimals(result)
         }
         fetchAnimals();
-    },[])
+    }, [])
 
-   
 
-console.log(animals);
+
+    console.log(animals);
     return <>
 
-    <h1>Here are the Animals in The Zoo!</h1>
-    <section className="AnimalSection">
-    <ul>
-        {animals.map((animal)=> <Animal animal={animal} key={animal.id}/>)}
-    </ul>
-    </section>
+        <h1>Here are the Animals in The Zoo!</h1>
+        <section className="AnimalSection">
+            <ul>
+                {animals.map((animal) => <Animal animal={animal} key={animal.id} />)}
+            </ul>
+        </section>
     </>
 }
