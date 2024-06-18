@@ -1,4 +1,11 @@
 .AnimalSection{
 display: flex;
 flex-direction:row;
+    img{
+        max-width: 20rem;
+    }
+}
+.Animal{
+    list-style: none;
+    max-width: 30rem;
 }
