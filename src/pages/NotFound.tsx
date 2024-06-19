@@ -1,3 +1,3 @@
 export const NotFound= ()=>{
-    return <h1>Oops uwu a fucky wucky happened, the code monkeys at retzerbil coding LLC are working wevvy hawd to fix this :33</h1>
+    return <h1>Error page not found!</h1>
 }
