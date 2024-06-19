@@ -18,9 +18,6 @@ export const Animals = () => {
         fetchAnimals();
     }, [])
 
-
-
-    console.log(animals);
     return <>
 
         <h1>Here are the Animals in The Zoo!</h1>

@@ -5,9 +5,6 @@ interface IDetailedAnimalProps {
 
 export const ShowAnimalDetail = ({ currentAnimal }: IDetailedAnimalProps) => {
 
-    console.log("nu är vi i showanimaldetail", currentAnimal);
-    
-
     return <>
         <h1>Details for {currentAnimal.name}</h1>
         <img src={currentAnimal.imageUrl} alt={currentAnimal.name} />
