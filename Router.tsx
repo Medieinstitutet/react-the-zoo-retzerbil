@@ -4,7 +4,7 @@ import { Home } from "./src/pages/Home"
 import { Animals } from "./src/pages/Animals"
 import { NotFound } from "./src/pages/NotFound";
 import { About } from "./src/pages/About";
-import { AnimalsDetailView } from "./src/pages/AnimalDetailView"
+import { AnimalDetailView } from "./src/pages/AnimalDetailView"
 
 export const router = createBrowserRouter([
     {
@@ -20,8 +20,8 @@ export const router = createBrowserRouter([
                 element: <Animals></Animals>
             },
             {
-                path: "/animalDetails",
-                element: <AnimalsDetailView></AnimalsDetailView>
+                path: "/animalDetailView/:animalId",
+                element: <AnimalDetailView></AnimalDetailView>
             },
             {
                 path: "/about",

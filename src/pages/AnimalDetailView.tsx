@@ -2,13 +2,18 @@ import { useParams } from "react-router-dom"
 import { ShowAnimalDetail } from "../components/ShowAnimalDetail"
 import { IAnimal } from "../models/IAnimal";
 
-export const AnimalsDetailView =() =>{
-    const {animal}=useParams();
+export const AnimalDetailView = () => {
+    const { animalId } = useParams();
 
-    const animals:IAnimal[] = JSON.parse(localStorage.getItem("localStorageAnimals"));
+    const animals: IAnimal[] = JSON.parse(localStorage.getItem("localStorageAnimals") || "[]");
+    const animal = animals.find(animal => animal.id === Number(animalId));
 
-    return<>
+    console.log("nu är vi i animaldetailview", animalId);
+    
 
-    <ShowAnimalDetail></ShowAnimalDetail>
+    return <>
+        {animal &&
+            <ShowAnimalDetail currentAnimal={animal}></ShowAnimalDetail>
+        }
     </>
 }

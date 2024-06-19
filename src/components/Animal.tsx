@@ -7,6 +7,7 @@ export const Animal = ({ animal }: IAnimalProps) => {
     const navigate = useNavigate();
 
     const handleClick = () =>{
+        console.log(animal);
     navigate("/AnimalDetailView/" + animal.id)
     }
 
