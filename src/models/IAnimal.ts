@@ -5,4 +5,5 @@ export interface IAnimal{
     imageUrl:string
     shortDescription:string;
     longDescription:string;
+    lastFed:string;
 }

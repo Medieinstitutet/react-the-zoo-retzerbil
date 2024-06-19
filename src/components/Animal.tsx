@@ -7,7 +7,7 @@ export const Animal = ({ animal }: IAnimalProps) => {
     const navigate = useNavigate();
 
     const handleClick = () =>{
-    navigate("/AnimalDetailView/" + animal.id)
+    navigate("/animaldetailview/" + animal.id)
     }
 
     return <>
