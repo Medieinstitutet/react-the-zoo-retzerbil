@@ -1,0 +1,10 @@
+li{
+    list-style: none;
+}
+nav{
+    ul{
+        display: flex;
+        flex-flow: center;
+        justify-content: space-around;
+    }
+}

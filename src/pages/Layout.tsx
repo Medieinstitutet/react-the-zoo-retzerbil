@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom"
+import "../LayoutStyling.scss"
 
 export const Layout = () => {
     return (

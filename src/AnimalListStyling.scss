@@ -1,11 +1,17 @@
 .AnimalSection {
-    display: flex;
-    flex-direction: row;
+    width: 100%;
     img {
         max-width: 20rem;
+    }
+    ul{
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
 .Animal {
     list-style: none;
-    max-width: 30rem;
+    width: calc(100% / 3 - 10px);
+    margin: 5px;
 }
