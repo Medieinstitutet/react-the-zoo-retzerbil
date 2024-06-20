@@ -6,8 +6,8 @@ interface IAnimalProps {
 export const Animal = ({ animal }: IAnimalProps) => {
     const navigate = useNavigate();
 
-    const handleClick = () =>{
-    navigate("/animaldetailview/" + animal.id)
+    const handleClick = () => {
+        navigate("/animaldetailview/" + animal.id)
     }
 
     return <>

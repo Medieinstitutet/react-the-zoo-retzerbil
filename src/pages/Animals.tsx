@@ -14,7 +14,7 @@ export const Animals = () => {
             const result = await get();
             setAnimals(result)
             if (!localStorage.getItem("localStorageAnimals")) {
-                localStorage.setItem("localStorageAnimals",JSON.stringify(result));
+                localStorage.setItem("localStorageAnimals", JSON.stringify(result));
             }
         }
         fetchAnimals();
