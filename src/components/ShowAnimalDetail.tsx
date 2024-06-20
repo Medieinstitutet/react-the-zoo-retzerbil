@@ -4,7 +4,11 @@ interface IDetailedAnimalProps {
     currentAnimal: IAnimal
 }
 
-const handleClick = (animal: IAnimal, setLastFed:React.Dispatch<React.SetStateAction<string>>) => {
+
+export const ShowAnimalDetail = ({ currentAnimal }: IDetailedAnimalProps) => {
+const [lastFed, setLastFed] = useState(currentAnimal.lastFed)
+
+const handleClick = (animal: IAnimal) => {
     const currentDate = new Date();
     const currentDate8601 = currentDate.toISOString();
 
@@ -17,14 +21,30 @@ const handleClick = (animal: IAnimal, setLastFed:React.Dispatch<React.SetStateAc
         };
 }
 
-export const ShowAnimalDetail = ({ currentAnimal }: IDetailedAnimalProps) => {
-const [lastFed, setLastFed] = useState(currentAnimal.lastFed)
+
+const feedTime = () => {
+    const lastFedTime = new Date(lastFed);
+    const currentTime = new Date();
+    const timeDifference = currentTime.getTime() - lastFedTime.getTime();
+    const feedCooldown = 3 * 1000;
+
+    if (timeDifference > feedCooldown) {
+        return true;
+    } else {
+        setTimeout(() => {
+        }, feedCooldown - timeDifference);
+        return false;
+    }
+}
     return <>
         <h1>Details for {currentAnimal.name}</h1>
         <img src={currentAnimal.imageUrl} alt={currentAnimal.name} />
         <h2>Latin name: {currentAnimal.latinName}</h2>
         <p>{currentAnimal.longDescription}</p>
         <p>Last fed: {lastFed}</p>
-        <button onClick={() => handleClick(currentAnimal, setLastFed)}>Feed</button>
+        {feedTime() && (
+                    <button onClick={() => handleClick(currentAnimal)}>Feed</button>
+        )}
+
     </>
 }
