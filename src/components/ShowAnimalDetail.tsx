@@ -3,9 +3,16 @@ interface IDetailedAnimalProps {
     currentAnimal: IAnimal
 }
 
+const handleClick = (animal: IAnimal) => {
+    const currentDate = new Date();
+    const currentDate8601 = currentDate.toISOString();
 
-const handleClick = ()=>{
-    
+    const animals: IAnimal[] = JSON.parse(localStorage.getItem("localStorageAnimals") || "[]");
+    const animalToChange = animals.find(animalToChange => animalToChange.id === Number(animal.id));
+    if (animalToChange)  { 
+            animalToChange.lastFed = currentDate8601;
+            localStorage.setItem("localStorageAnimals", JSON.stringify(animals))
+        };
 }
 
 export const ShowAnimalDetail = ({ currentAnimal }: IDetailedAnimalProps) => {
@@ -16,6 +23,6 @@ export const ShowAnimalDetail = ({ currentAnimal }: IDetailedAnimalProps) => {
         <h2>Latin name: {currentAnimal.latinName}</h2>
         <p>{currentAnimal.longDescription}</p>
         <p>Last fed: {currentAnimal.lastFed}</p>
-        <button onClick={handleClick}>Feed</button>
+        <button onClick={() => handleClick(currentAnimal)}>Feed</button>
     </>
 }
