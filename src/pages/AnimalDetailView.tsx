@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { ShowAnimalDetail } from "../components/ShowAnimalDetail"
 import { IAnimal } from "../models/IAnimal";
+import "../AnimalDetailStyling.scss"
 
 export const AnimalDetailView = () => {
     const { animalId } = useParams();
